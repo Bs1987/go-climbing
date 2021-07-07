@@ -1,0 +1,14 @@
+.topMenuContainer {
+    background-color: papayawhip;
+    grid-area: header;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+}
+.navButton {
+    margin: 1em;
+}
