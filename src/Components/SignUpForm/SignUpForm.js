@@ -1,18 +1,18 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import "./LoginForm.css"
+import "./SignUpForm.css"
 
-function LoginForm() {
+function SignUpForm() {
   const {
-    register,
-    handleSubmit,
-    formState: { errors },
+	register,
+	handleSubmit,
+	formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
   console.log(errors);
 
   return (
-   <div className="loginFormContainer">
+   <div className="signUpFormContainer">
 	 <form onSubmit={handleSubmit(onSubmit)}
 	 >
 	   <input
@@ -26,10 +26,10 @@ function LoginForm() {
 		{...register("Password", { required: true })}
 	   />
 
-	   <button type="submit" className="logInButton">Log in</button>
+	   <button type="submit" className="signUpButton">Sign Up</button>
 	 </form>
    </div>
   );
 }
 
-export default LoginForm;
+export default SignUpForm;
