@@ -1,34 +1,35 @@
 import React from "react";
+import "./SignUpForm.css";
 import { useForm } from "react-hook-form";
-import "./SignUpForm.css"
 
-function SignUpForm() {
+function SignUpForm(props) {
   const {
-	register,
-	handleSubmit,
-	formState: { errors },
+    handleSubmit,
+    register,
+    formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
-  console.log(errors);
+
+  function onSubmit(data) {
+    console.log(data);
+  }
 
   return (
-   <div className="signUpFormContainer">
-	 <form onSubmit={handleSubmit(onSubmit)}
-	 >
-	   <input
-		type="text"
-		placeholder="Username"
-		{...register("Username", { required: true })}
-	   />
-	   <input
-		type="password"
-		placeholder="Password"
-		{...register("Password", { required: true })}
-	   />
+    <div className="signUpFormContainer">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input
+          type="email"
+          placeholder="E-mail"
+          {...register("email", { required: true })}
+        />
 
-	   <button type="submit" className="signUpButton">Sign Up</button>
-	 </form>
-   </div>
+        <input
+          type="password"
+          placeholder="Password"
+          {...register("password", { required: true })}
+        />
+        <button type="submit">Sign Up!</button>
+      </form>
+    </div>
   );
 }
 

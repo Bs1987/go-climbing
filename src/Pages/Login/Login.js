@@ -6,7 +6,7 @@ function Login(props) {
   return (
    <div className="page">
 	 <div className="loginContainer">
-	   Log in
+	  <h2>Log in</h2>
 	   <LoginForm />
 	 </div>
    </div>
