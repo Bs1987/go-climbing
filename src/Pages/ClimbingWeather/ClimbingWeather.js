@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./ClimbingWeather.css";
 import axios from "axios";
+import SearchButton from "../../Components/SearchButton/SearchButton";
 
 const apiKey = "5ff33d830e28de522eb7ad3dc5b1f09b";
 
@@ -45,26 +46,26 @@ function WeatherPage(props) {
       <div className="weather-container">
         <div className="weather-header">
           <h2>WeatherPage</h2>
-		  <span>
-			<h1>Weather description:</h1>
-			<h2>{weatherData.weather[0].description}</h2>
-			<h1>Location:</h1>
-			<h2>{weatherData.name}</h2>
-			<h1>Humidity:</h1>
-			<h2>{weatherData.main.humidity}</h2>
-			<h1>Temperature</h1>
-			<h2>{weatherData.main.temp}</h2>
-		  </span>
+          <span>
+            <h1>Weather description:</h1>
+            <h2>{weatherData.weather[0].description}</h2>
+            <h1>Location:</h1>
+            <h2>{weatherData.name}</h2>
+            <h1>Humidity:</h1>
+            <h2>{weatherData.main.humidity}</h2>
+            <h1>Temperature</h1>
+            <h2>{weatherData.main.temp}</h2>
+          </span>
           <button type="button" onClick={fetchGroningen}>
             Click here to find the perfect climbing weather!
           </button>
-		  <button type="button" onClick={fetchMaastricht}>
+          <button type="button" onClick={fetchMaastricht}>
             Click here to find the perfect climbing weather!
           </button>
-		  <button type="button" onClick={fetchAmsterdam}>
+          <button type="button" onClick={fetchAmsterdam}>
             Click here to find the perfect climbing weather!
           </button>
-
+          <SearchButton />
         </div>
       </div>
     </>
