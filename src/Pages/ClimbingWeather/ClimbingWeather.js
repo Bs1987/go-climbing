@@ -3,7 +3,6 @@ import "./ClimbingWeather.css";
 import axios from "axios";
 import SearchButton from "../../Components/SearchButton/SearchButton";
 
-const apiKey = "5ff33d830e28de522eb7ad3dc5b1f09b";
 
 function WeatherPage(props) {
   const [weatherData, setWeatherData] = useState(null);
@@ -11,7 +10,7 @@ function WeatherPage(props) {
   async function fetchGroningen() {
     try {
       const result = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=groningen,nl&appid=${apiKey}&lang=en&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=groningen,nl&appid=${process.env.REACT_APP_API_KEY}&lang=en&units=metric`
       );
       console.log(result.data);
       setWeatherData(result.data);
