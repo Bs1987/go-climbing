@@ -41,4 +41,6 @@ const cityList = [
     }
   },
 ];
-console.log("citylist is: ", cityList[3]);
+
+
+export default cityList;
