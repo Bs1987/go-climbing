@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "./ClimbingWeather.css";
 import axios from "axios";
 import SearchButton from "../../Components/SearchButton/SearchButton";
-
+import Cities from "../../Helpers/Cities";
 
 function WeatherPage(props) {
   const [weatherData, setWeatherData] = useState(null);
+  console.log(Cities);
 
   async function fetchGroningen() {
     try {
@@ -21,7 +22,7 @@ function WeatherPage(props) {
   async function fetchMaastricht() {
     try {
       const result = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=Maastricht,nl&appid=${apiKey}&lang=en&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=Maastricht,nl&appid=${process.env.REACT_APP_API_KEY}&lang=en&units=metric`
       );
       console.log(result.data);
       setWeatherData(result.data);
@@ -32,7 +33,7 @@ function WeatherPage(props) {
   async function fetchAmsterdam() {
     try {
       const result = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=Amsterdam,nl&appid=${apiKey}&lang=en&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=Amsterdam,nl&appid=${process.env.REACT_APP_API_KEY}&lang=en&units=metric`
       );
       console.log(result.data);
       setWeatherData(result.data);
